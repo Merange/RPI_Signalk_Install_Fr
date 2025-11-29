@@ -1,0 +1,10 @@
+[Unit]
+Description=SocketCAN interface can0 et can1 with a baudrate of 250000
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/local/bin/Bateau/manageCanNetwork.sh start
+ExecReload=/usr/local/bin/Bateau/manageCanNetwork.sh reload
+ExecStop=/usr/local/bin/Bateau/manageCanNetwork.sh stop
+[Install]
+WantedBy=multi-user.target
